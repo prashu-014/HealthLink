@@ -1,0 +1,19 @@
+$primary-color: #27445D;
+$text-color: #fff;
+
+
+
+.background-color{
+    background-color: $primary-color;
+}
+
+.text-color{
+    color : $text-color
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
