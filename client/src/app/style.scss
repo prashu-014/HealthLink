@@ -26,3 +26,31 @@ body{
     background-color: $primary-color;    
 }
 
+
+
+.table-container 
+{
+    min-width: 100%;
+    border: 1px solid grey;
+   
+    
+    thead tr th{
+        padding: 0.5rem;
+        background-color: #27445D;
+        color: white;
+    }
+
+    tbody > tr
+    {
+        border: 1px solid grey;
+    
+    }
+
+    tbody tr{
+        text-align: center;
+    }
+    tbody > tr> td{
+        padding: 0.5rem;
+    }
+
+}

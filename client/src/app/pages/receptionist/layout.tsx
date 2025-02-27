@@ -1,3 +1,5 @@
+"use client"
+
 import Navigation from '@/app/components/navbar/Navigation'
 import React from 'react'
 
@@ -7,8 +9,8 @@ const ReceptionistLayout = ({ children }: { children: React.ReactNode }) => {
         <section className='col-span-2 my-4'>
             <Navigation />
         </section>
-        <section className='col-span-6 my-4 '>
-            <div className='bg-white h-full rounded-3xl p-2'>
+        <section className='col-span-6 my-4 mr-3 '>
+            <div className='bg-white h-full rounded-3xl overflow-hidden'>
             {children} 
             </div>
         </section>

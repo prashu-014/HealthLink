@@ -21,10 +21,10 @@ const Navigation = () => {
           <li key={index}>
             <Link
               href={nav.link}
-              className={`block py-3 px-4 w-full text-[1.1rem] transition-all text-white ${
+              className={`block py-3 px-4 w-full text-[1.1rem] transition-all ${
                 activeNav === nav.name
                   ? "bg-white text-blue-950"
-                  : "hover:bg-slate-800"
+                  : "hover:bg-slate-800  text-white"
               }`}
               onClick={() => setActiveNav(nav.name)} 
             >
