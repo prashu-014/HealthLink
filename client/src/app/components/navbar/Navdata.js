@@ -2,7 +2,7 @@
 const navdata = [
     {
         name: 'Dashboard',
-        link:'/pages/receptionist/dashboard'
+        link:'/pages/receptionist/'
     },
     {
         name: 'Walk-In',
