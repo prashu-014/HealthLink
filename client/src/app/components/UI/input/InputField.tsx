@@ -1,15 +1,26 @@
 import React from 'react'
 
-type Props = {
-    label: string;
-    type:string
-};
+interface InputFieldProps {
+  index?: number;
+  type: string;
+  label: string;
+  name?: string;
+  register?: any;
+  error?: any
+}
 
-const InputField:React.FC<Props> = ({label,type}) => {
+const InputField: React.FC<InputFieldProps> = ({ type, label, name, register ,error}) => {
   return (
-    <div className='py-2'>
-        <label htmlFor="">{label}</label> <br />
-        <input type={type} className='w-full border p-1' />
+    <div>
+      <label className="block text-sm font-medium mb-1">{label}</label>
+      <input
+        {...register(name, name === "age" ? { valueAsNumber: true } : {})}
+        type={type}
+        className={`w-full border p-2 rounded ${
+          error ? "border-red-500" : "border-gray-300"
+        }`} 
+        placeholder={`Enter your ${label.toLowerCase()}`}
+      />
     </div>
   )
 }

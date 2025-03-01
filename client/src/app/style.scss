@@ -4,12 +4,17 @@
     box-sizing: border-box;
 }
 $primary-color: #27445D;
+$secondary-color : #27445dd8;
 $text-color: #fff;
 $background-white:$text-color;
 
 
 .background-color{
     background-color: $primary-color;
+}
+
+.background-header{
+    background-color: $secondary-color;
 }
 
 .text-color{
