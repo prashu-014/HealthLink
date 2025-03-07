@@ -1,11 +1,10 @@
 import React from 'react'
 
 interface InputFieldProps {
-  index?: number;
   type: string;
   label: string;
   name?: string;
-  register?: any;
+  register: any;
   error?: any
 }
 

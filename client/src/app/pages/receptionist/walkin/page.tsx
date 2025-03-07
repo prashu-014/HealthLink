@@ -38,7 +38,7 @@ const WalkIn = () => {
         {patientdata.map((field, index) => (
           <div key={index}>
             <InputField
-              index={index}
+              key={index}
               type={field.type}
               label={field.label}
               register={register}
