@@ -2,13 +2,14 @@
 
 import CustomHeader from "@/app/components/header/customHeader";
 import InputField from "@/app/components/UI/input/InputField";
-import React from "react";
+import React,{ useState } from "react";
 import patientdata from "@/app/data/patientdata";
 import Button from "@/app/components/UI/button/Button";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import patientvalidation from "@/app/validation/patientvalidation";
+import PopupModal from "@/app/components/UI/modal/PopupModal";
 
 type FormData = z.infer<typeof patientvalidation>;
 
@@ -21,15 +22,16 @@ const WalkIn = () => {
     resolver: zodResolver(patientvalidation),
   });
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const onSubmit = (data: FormData) => {
     alert(JSON.stringify(data));
-
     reset()
   };
 
   return (
     <article className="relative h-full">
-      <CustomHeader name="Walk In" />
+      <CustomHeader name="Walk In" openModal={() => setIsModalOpen(true)} />
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -50,15 +52,17 @@ const WalkIn = () => {
 
         <div className="w-full absolute left-0 bottom-0 py-4 flex justify-end px-6">
           <Button
-            style="background-color text-color border  px-6 py-2 rounded"
+            style="background-color text-color border px-6 py-2 rounded"
             type="submit"
             disabled={isSubmitting}
-            buttonName='Submit'
+            buttonName="Submit"
           />
         </div>
       </form>
-    </article>
 
+    
+      {isModalOpen && <PopupModal  onClose={() => setIsModalOpen(false)} />}
+    </article>
   );
 };
 
