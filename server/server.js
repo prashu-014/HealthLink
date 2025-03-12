@@ -2,6 +2,7 @@ import express from "express";
 import 'dotenv/config.js'
 import cors from 'cors'
 import DBconnection from "./config/DBconnection.js";
+import PatientRouter from "./routes/patient.route.js";
 
 const app = express()
 app.use(express.json())
@@ -10,6 +11,7 @@ app.use(cors())
 
 const PORT = process.env.PORT_NO
 
+app.use("/api/v1/patient",PatientRouter)
 
 app.get('/',(req,res)=>{
     res.send("prashant")
