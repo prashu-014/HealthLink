@@ -1,8 +1,13 @@
 import mongoose from "mongoose";
 
 async function DBconnection() {
-    mongoose.connect('mongodb://0.0.0.0')
-    console.log('DB connected');
+    try{
+        mongoose.connect('mongodb://0.0.0.0/healthlink')
+        console.log('DB connected');
+    }
+    catch(err){
+        console.log(err)
+    }
 } 
 
 export default DBconnection
