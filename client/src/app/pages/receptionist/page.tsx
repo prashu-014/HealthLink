@@ -6,9 +6,9 @@ import PatientTable from '@/app/components/UI/table/PatientTable';
 
 
 const tabs = [
-  { id: 'Queue', label: 'Queue', content:<PatientTable />, count: '2' },
-  { id: 'appointments', label: 'Appointments', content: 'Appointments Content', count: '1' },
-  { id: 'No Show', label: 'No Show', content: 'Reports Content', count: '0' },
+  { id: 'Queue', label: 'Queue', count: '2' },
+  { id: 'appointments', label: 'Appointments', count: '1' },
+  { id: 'No Show', label: 'No Show', count: '0' },
 ];
 
 const Dashboard = () => {
@@ -36,7 +36,9 @@ const Dashboard = () => {
 
       </div>
       <div className=" p-3  rounded h-full">
-        {tabs.find((tab) => tab.id === activeTab)?.content}
+      {activeTab === 'Queue' && <PatientTable />}
+        {activeTab === 'appointments' && <div>Appointments Content</div>}
+        {activeTab === 'No Show' && <div>Reports Content</div>}
       </div>
     </div>
 
