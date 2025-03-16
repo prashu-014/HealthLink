@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import navdata from "./Navdata";
+import Logo from "../heading/Logo";
 
 type NavItem = {
   name: string;
@@ -14,8 +15,7 @@ const Navigation = () => {
 
   return (
     <aside className="h-full flex flex-col gap-10 ">
-      <h1 className="text-3xl font-bold mb-4 text-white p-4">HealthLink</h1>
-
+      <Logo />
       <ul className="h-auto flex flex-col ">
         {navdata.map((nav: NavItem, index: number) => (
           <li key={index}>
