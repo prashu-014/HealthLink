@@ -6,7 +6,7 @@ const PatientHeader = () => {
         <span className='w-10 h-10 bg-white rounded-full block'></span>
         <div className='text-sm'>
             <span className='font-bold'>Prashant</span> <br />
-            <span>Male,35y</span>
+            <span className='text-xs'>Male,35y</span>
         </div>
     </div>
   )
