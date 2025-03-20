@@ -3,6 +3,7 @@
 import React from 'react'
 import { IoCloseOutline } from "react-icons/io5";
 import TabPanel from '../tab panel/TabPanel';
+import Medicine from '../medicine/Medicine';
 
 type PrescriptionProps = {
     setIsPrescription: React.Dispatch<React.SetStateAction<boolean>>
@@ -11,7 +12,7 @@ type PrescriptionProps = {
 const tabNames = ['Medical', 'Symptoms', 'Diagnosis', 'Instructions', 'Other']
 
 const tabContent = {
-    Medical: <div>Medical Content</div>,
+    Medical: <Medicine />,
     Symptoms: <div>Symptoms Content</div>,
     Diagnosis: <div>Diagnosis Content</div>,
     Instructions: <div>Instructions Content</div>,
@@ -26,8 +27,8 @@ const Prescription: React.FC<PrescriptionProps> = ({ setIsPrescription }) => {
                 <button className='bg-red-500 p-2 rounded-s-2xl' onClick={() => setIsPrescription(false)}><IoCloseOutline className='text-xl text-white' /></button>
             </div>
 
-            <article className='flex gap-1 pt-1 px-2 pb-2 flex-1 '>
-                <div className='flex-1'>
+            <article className='flex flex-col md:flex-row gap-1 pt-1 px-2 pb-2 flex-1 '>
+                <div className='flex-1 bg-white'>
                     <TabPanel tabs={tabNames} content={tabContent} />
                 </div>
                 <div className='bg-white  flex-1'>Prescription Generate ...</div>
