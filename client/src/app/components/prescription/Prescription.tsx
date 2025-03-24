@@ -28,7 +28,7 @@ const Prescription: React.FC<PrescriptionProps> = ({ setIsPrescription }) => {
             </div>
 
             <article className='flex flex-col md:flex-row gap-1 pt-1 px-2 pb-2 flex-1 '>
-                <div className='flex-1 bg-white'>
+                <div className='flex-1'>
                     <TabPanel tabs={tabNames} content={tabContent} />
                 </div>
                 <div className='bg-white  flex-1'>Prescription Generate ...</div>
