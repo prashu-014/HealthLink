@@ -4,6 +4,7 @@ import React, { useDeferredValue, useState } from "react";
 import SearchBox from "../UI/input/SearchBox";
 import SelectionBox from "../UI/suggection/SelectionBox";
 import { usePresciptionStore } from "@/app/store/usePresciptionStore";
+import SelectDose from "./SelectDose";
 
 const Medicine = () => {
   const [isFocus, setIsFocus] = useState(false);
@@ -55,6 +56,7 @@ const Medicine = () => {
     if (selectedData) {
       addMedicine(selectedData);
     }
+    setIsFocus(false)
   };
 
   return (
@@ -84,6 +86,7 @@ const Medicine = () => {
         )
       )}
       <SelectionBox />
+      <SelectDose />
     </div>
   );
 };

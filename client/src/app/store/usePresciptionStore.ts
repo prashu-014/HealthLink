@@ -6,20 +6,30 @@ interface Medicine {
   type: string;
 }
 
-interface MedicalState {
-  selectedMedicines: Medicine[];
-  addMedicine: (medicine: Medicine) => void;
-  removeMedicine: (id: number) => void;
+interface Symptom {
+  id: number;
+  name: string;
 }
 
-export const usePresciptionStore = create<MedicalState>((set) => ({
+interface PrescriptionState {
+  selectedMedicines: Medicine[];
+  selectedSymptoms: Symptom[];
+
+  addMedicine: (medicine: Medicine) => void;
+  removeMedicine: (id: number) => void;
+
+  addSymptom: (symptom: Symptom) => void;
+  removeSymptom: (id: number) => void;
+
+}
+
+export const usePresciptionStore = create<PrescriptionState>((set) => ({
   selectedMedicines: [],
-  
+  selectedSymptoms: [],
+
   addMedicine: (medicine) =>
     set((state) => {
-      if (state.selectedMedicines.some((m) => m.id === medicine.id)) {
-        return state;
-      }
+      if (state.selectedMedicines.some((m) => m.id === medicine.id)) return state;
       return { selectedMedicines: [...state.selectedMedicines, medicine] };
     }),
 
@@ -27,4 +37,17 @@ export const usePresciptionStore = create<MedicalState>((set) => ({
     set((state) => ({
       selectedMedicines: state.selectedMedicines.filter((m) => m.id !== id),
     })),
+
+  addSymptom: (symptom) =>
+    set((state) => {
+      if (state.selectedSymptoms.some((s) => s.id === symptom.id)) return state;
+      return { selectedSymptoms: [...state.selectedSymptoms, symptom] };
+    }),
+
+  removeSymptom: (id) =>
+    set((state) => ({
+      selectedSymptoms: state.selectedSymptoms.filter((s) => s.id !== id),
+    })),
+
+  
 }));
