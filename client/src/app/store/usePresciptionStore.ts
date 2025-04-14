@@ -11,10 +11,15 @@ interface Symptom {
   name: string;
 }
 
+interface InstructionProps {
+  name: string;
+}
+
 interface PrescriptionState {
   selectedMedicines: Medicine[];
   selectedSymptoms: Symptom[];
   selectedDiagnosis: Symptom[];
+  selectedInstruction :InstructionProps[];
 
   addMedicine: (medicine: Medicine) => void;
   removeMedicine: (id: number) => void;
@@ -24,12 +29,16 @@ interface PrescriptionState {
 
   addDiagnosis: (diagnosis: Symptom) => void;
   removeDiagnosis: (id: number) => void;
+
+  addInstruction: (instruction: string) => void;
+  removeInstruction: (name:string) => void;
 }
 
 export const usePresciptionStore = create<PrescriptionState>((set) => ({
   selectedMedicines: [],
   selectedSymptoms: [],
   selectedDiagnosis: [],
+  selectedInstruction :[],
 
   addMedicine: (medicine) =>
     set((state) => {
@@ -63,4 +72,22 @@ export const usePresciptionStore = create<PrescriptionState>((set) => ({
       set((state) => ({
         selectedDiagnosis: state.selectedDiagnosis.filter((d) => d.id !== id),
       })),
+
+      addInstruction: (instruction) =>
+        set((state) => {
+          if (state.selectedInstruction.some((i) => i.name === instruction)) return state;
+          return {
+            selectedInstruction: [
+              ...state.selectedInstruction,
+              { name: instruction },
+            ],
+          };
+        }),
+      
+      removeInstruction: (name) =>
+        set((state) => ({
+          selectedInstruction: state.selectedInstruction.filter(
+            (i) => i.name !== name
+          ),
+        })),    
 }));

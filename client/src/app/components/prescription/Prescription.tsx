@@ -6,6 +6,8 @@ import TabPanel from '../tab panel/TabPanel';
 import Medicine from '../medicine/Medicine';
 import PresciptionPdf from '../pdfviewer/PresciptionPdf';
 import Symptom from '../symptoms/Symptom';
+import Diagnosis from '../diagnosis/Diagnosis';
+import Instruction from '../Instruction/Instruction'
 
 type PrescriptionProps = {
     setIsPrescription: React.Dispatch<React.SetStateAction<boolean>>
@@ -16,8 +18,8 @@ const tabNames = ['Medical', 'Symptoms', 'Diagnosis', 'Instructions', 'Other']
 const tabContent = {
     Medical: <Medicine />,
     Symptoms: <Symptom />,
-    Diagnosis: <div>Diagnosis Content</div>,
-    Instructions: <div>Instructions Content</div>,
+    Diagnosis: <Diagnosis />,
+    Instructions: <Instruction />,
     Other: <div>Other Content</div>,
 }
 
