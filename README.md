@@ -100,6 +100,8 @@ npm run dev
 
 # 🖼️ Screenshots
 
+***Receptionist*
+
 ![Image](https://github.com/user-attachments/assets/ba0bd5e5-069b-450d-8738-3a4b861ca20e)
 
 ![Image](https://github.com/user-attachments/assets/09639021-bee7-4261-b054-f446777dd01b)
@@ -108,9 +110,8 @@ npm run dev
 
 ![Image](https://github.com/user-attachments/assets/868749fc-d480-4690-891e-3e67fcf4a782)
 
+**Doctor**
 
 ![Image](https://github.com/user-attachments/assets/6a505064-bba0-4a06-aa85-b768dab7e255)
-
-![Image](https://github.com/user-attachments/assets/aa6c0929-68a9-4f2a-8f90-919d7fc801bf)
 
 ![Image](https://github.com/user-attachments/assets/fcccbf65-d0e4-4384-a1ae-296ba25233c1)
